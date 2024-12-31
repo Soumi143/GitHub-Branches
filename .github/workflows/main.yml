@@ -1,12 +1,12 @@
-name: 'CI'
+name: CI
 
 # Controls when the workflow will run
 on:
 # Triggers the workflow on push or pull request events only for below branches
   push:
-    branches: [ "master" ]
+    branches: master
   pull_request:
-    branches: [ "master" ]
+    branches: master
 
     # Allows you to run this workflow manually from the Actions tab
     workflow_dispatch:
@@ -21,7 +21,7 @@ on:
       # Steps represent a sequenceof tasks that will be executed as part of the job
         steps: 
         # Checks out your repository under $GITHUB_WORKSPACE, so your job can access it
-          - uses: actions/checkout@v3
+          - uses: actions/checkout@v4
 
         # Runs a single command using runners shell
           - name: Run a one line script
