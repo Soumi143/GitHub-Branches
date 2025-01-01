@@ -1,0 +1,25 @@
+name: 'CI'
+
+on:           # Controls when the workflow will run
+  workflow_dispatch:   # Allows you to run this workflow manually from the Actions tab
+# Triggers the workflow on push or pull request events only for below branches
+  #push:
+    #branches: [master]
+  #pull_request:
+    #branches: [master]
+
+jobs:     #A workflow run is made up of one or more jobs that can run sequentially or in parallel
+  build-and-release:  # This workflow contains a single job called "build"
+    runs-on: ubuntu-latest   #the type of runner that the job will run on
+
+    steps: # Steps represent a sequenceof tasks that will be executed as part of the job
+        # Checks out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+        
+      - name: Run a one line script # Runs a single command using runners shell
+        run: echo hello, world!
+
+      - name: Run a multi-line script    # Runs a set of commands using the runners shell
+        run: |
+            echo Add other actions to build,
+            echo test, and deploy your project.
